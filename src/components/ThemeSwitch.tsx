@@ -11,9 +11,7 @@ const SwitchWrapper = styled.div`
 
 const ThemeSwitch: FC = () => {
     const [darkMode, setDarkMode] = useState<boolean>(true)
-
-    console.log(darkMode)
-
+    
     return (
       <SwitchWrapper>
         <Switch 
@@ -25,7 +23,7 @@ const ThemeSwitch: FC = () => {
           offHandleColor={LightMode.background}
           checkedIcon={false}
           uncheckedIcon={false}
-          activeBoxShadow={'0 0 2px 3px #3bf'}
+          activeBoxShadow={darkMode ? `0 0 8px 8px ${DarkMode.controls}` : `0 0 8px 8px ${LightMode.controls}`}
         />
       </SwitchWrapper>
     )

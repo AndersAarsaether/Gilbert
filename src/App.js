@@ -3,9 +3,11 @@ import AppWrapper from "./components/AppWrapper";
 
 function App() {
   return (
-    <AppWrapper useDark={true}>
-      <div>ldsa</div>
-    </AppWrapper>
+    <div className="App">
+      <AppWrapper darkMode={false}>
+        <p>test</p>
+      </AppWrapper>
+    </div>
   );
 }
 

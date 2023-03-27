@@ -3,11 +3,11 @@ import { GlobalWrapper } from "./styles";
 
 interface AppWrapperProps {
   children: React.ReactNode;
-  useDark: boolean;
+  darkMode: boolean;
 }
 
-const AppWrapper: FC<AppWrapperProps> = ({ children, useDark }) => {
-  return <GlobalWrapper useDark={useDark}>{children}</GlobalWrapper>;
+const AppWrapper: FC<AppWrapperProps> = ({ children, darkMode }) => {
+  return <GlobalWrapper darkMode={darkMode}>{children}</GlobalWrapper>;
 };
 
 export default AppWrapper;

@@ -1,15 +1,16 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
+import { useSelector } from "react-redux";
 import Home from "./components/Home";
 import ThemeSwitch from "./components/ThemeSwitch";
 import { ContentWrapper, GlobalWrapper, Margin } from "./styles";
-import { ColorMode, DarkMode } from "./types/Colors";
+import AppState from "./redux/state";
 
 const App: FC = () => {
-  const [theme, setTheme] = useState<ColorMode>(DarkMode);
+  const theme = useSelector((state: AppState) => state.theme);
 
   return (
     <GlobalWrapper background={theme.background}>
-      <ThemeSwitch setTheme={setTheme} />
+      <ThemeSwitch />
       <ContentWrapper>
         <Margin>
           <Home />

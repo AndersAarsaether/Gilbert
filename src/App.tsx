@@ -1,16 +1,15 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import Home from "./components/Home";
 import ThemeSwitch from "./components/ThemeSwitch";
 import { ContentWrapper, GlobalWrapper, Margin } from "./styles";
-import { DarkMode, LightMode } from "./types/Colors";
+import { ColorMode, DarkMode } from "./types/Colors";
 
 const App: FC = () => {
-
-  const color = 1 < 2 ? DarkMode : LightMode
+  const [theme, setTheme] = useState<ColorMode>(DarkMode);
 
   return (
-    <GlobalWrapper background={color.background}>
-      <ThemeSwitch />
+    <GlobalWrapper background={theme.background}>
+      <ThemeSwitch setTheme={setTheme} />
       <ContentWrapper>
         <Margin>
           <Home />

@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import Switch from "react-switch";
 import styled from "styled-components";
 import { DarkMode, LightMode } from "../types/Colors";
@@ -9,8 +9,16 @@ const SwitchWrapper = styled.div`
   padding: 2rem 2rem 2rem 0;
 `;
 
-const ThemeSwitch: FC = () => {
+interface ThemeSwitchProps {
+  setTheme: any;
+}
+
+const ThemeSwitch: FC<ThemeSwitchProps> = ({ setTheme }) => {
   const [darkMode, setDarkMode] = useState<boolean>(true);
+
+  useEffect(() => {
+    setTheme(darkMode ? DarkMode : LightMode);
+  }, [darkMode]);
 
   return (
     <SwitchWrapper>

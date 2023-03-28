@@ -1,4 +1,4 @@
-export interface ColorMode {
+export interface Theme {
   background: string;
   text: string;
   controls: string;
@@ -8,7 +8,7 @@ export interface ColorMode {
   color4: string;
 }
 
-export const DarkMode: ColorMode = {
+export const DarkMode: Theme = {
   background: "#1F1F31",
   text: "#FFFFFF",
   controls: "#F1778B",
@@ -18,7 +18,7 @@ export const DarkMode: ColorMode = {
   color4: "#44EB9F",
 };
 
-export const LightMode: ColorMode = {
+export const LightMode: Theme = {
   background: "#F7E7CE",
   text: "#7E6859",
   controls: "#7E6859",

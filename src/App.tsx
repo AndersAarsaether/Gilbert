@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
-import Home from "./components/Home";
+import Home from "./screens/Home";
 import ThemeSwitch from "./components/ThemeSwitch";
 import { ContentWrapper, GlobalWrapper, Margin } from "./styles";
 import AppState from "./redux/state";

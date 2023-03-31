@@ -6,10 +6,10 @@ import AppState from "./redux/state";
 import HomeContainer from "./screens/home/HomeContainer";
 
 const App: FC = () => {
-  const theme = useSelector((state: AppState) => state.theme);
+  const { backgroundColor } = useSelector((state: AppState) => state.theme);
 
   return (
-    <GlobalWrapper background={theme.background}>
+    <GlobalWrapper background={backgroundColor}>
       <ThemeSwitch />
       <ContentWrapper>
         <Margin>

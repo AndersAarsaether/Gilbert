@@ -1,32 +1,32 @@
 export interface Theme {
-  background: string;
-  text: string;
-  controlText: string;
-  controls: string;
-  color1: string;
-  color2: string;
-  color3: string;
-  color4: string;
+  backgroundColor: string;
+  fontColor: string;
+  fontContrastColor: string;
+  controlColor: string;
+  extraColor1: string;
+  extraColor2: string;
+  extraColor3: string;
+  extraColor4: string;
 }
 
 export const DarkMode: Theme = {
-  background: "#1F1F31",
-  text: "#FFFFFF",
-  controlText: "#000000",
-  controls: "#F1778B",
-  color1: "#F0A967",
-  color2: "#FDFF8A",
-  color3: "#E287CE",
-  color4: "#44EB9F",
+  backgroundColor: "#1F1F31",
+  fontColor: "#FFFFFF",
+  fontContrastColor: "#000000",
+  controlColor: "#F1778B",
+  extraColor1: "#F0A967",
+  extraColor2: "#FDFF8A",
+  extraColor3: "#E287CE",
+  extraColor4: "#44EB9F",
 };
 
 export const LightMode: Theme = {
-  background: "#F7E7CE",
-  text: "#7E6859",
-  controlText: "#FFFFFF",
-  controls: "#7E6859",
-  color1: "#7E6859",
-  color2: "#7E6859",
-  color3: "#7E6859",
-  color4: "#7E6859",
+  backgroundColor: "#F7E7CE",
+  fontColor: "#7E6859",
+  fontContrastColor: "#FFFFFF",
+  controlColor: "#7E6859",
+  extraColor1: "#7E6859",
+  extraColor2: "#7E6859",
+  extraColor3: "#7E6859",
+  extraColor4: "#7E6859",
 };

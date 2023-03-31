@@ -2,24 +2,24 @@ import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  width: 6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 6rem;
 `;
 
-const Circle = styled.div<{ color: string }>`
-  border-radius: 100%;
-  width: 100%;
-  aspect-ratio: 1;
-  background-color: ${(props) => props.color};
+const Circle = styled.button<{ color: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  border-width: 0;
+  background-color: ${(props) => props.color};
 `;
 
 const Label = styled.span<{ color: string }>`
-  align-items: center;
   color: ${(props) => props.color};
   padding-top: 1rem;
 `;
@@ -41,7 +41,9 @@ const LinkButton: FC<LinkButtonProps> = ({
 }) => {
   return (
     <Wrapper>
-      <Circle color={background}>{icon}</Circle>
+      <Circle color={background} onClick={onClick}>
+        {icon}
+      </Circle>
       <Label color={textcolor}>{label}</Label>
     </Wrapper>
   );

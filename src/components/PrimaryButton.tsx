@@ -6,7 +6,7 @@ const ButtonWrapper = styled.div`
   width: 60%;
 `;
 
-const Button = styled.button<{ color: string; textColor: string }>`
+const Button = styled.button<{ color: string; fontColor: string }>`
   background-color: ${(props) => props.color};
   width: 100%;
   height: 2.2rem;
@@ -14,12 +14,12 @@ const Button = styled.button<{ color: string; textColor: string }>`
   border-width: 0;
   font-weight: 400;
   font-size: 1.1rem;
-  color: ${(props) => props.textColor};
+  color: ${(props) => props.fontColor};
 `;
 
 interface PrimaryButtonProps {
   color: string;
-  textColor: string;
+  fontColor: string;
   onClick: () => void;
   label: string;
 }
@@ -28,11 +28,11 @@ const PrimaryButton: FC<PrimaryButtonProps> = ({
   color,
   onClick,
   label,
-  textColor,
+  fontColor,
 }) => {
   return (
     <ButtonWrapper>
-      <Button color={color} onClick={onClick} textColor={textColor}>
+      <Button color={color} onClick={onClick} fontColor={fontColor}>
         {label}
       </Button>
     </ButtonWrapper>

@@ -25,16 +25,16 @@ const ThemeSwitch: FC = () => {
       <Switch
         checked={darkMode}
         onChange={(darkMode: boolean) => setDarkMode(darkMode)}
-        onColor={DarkMode.controls}
-        onHandleColor={LightMode.background}
-        offColor={LightMode.controls}
-        offHandleColor={LightMode.background}
+        onColor={DarkMode.controlColor}
+        onHandleColor={LightMode.backgroundColor}
+        offColor={LightMode.controlColor}
+        offHandleColor={LightMode.backgroundColor}
         checkedIcon={false}
         uncheckedIcon={false}
         activeBoxShadow={
           darkMode
-            ? `0 0 8px 8px ${DarkMode.controls}`
-            : `0 0 8px 8px ${LightMode.controls}`
+            ? `0 0 8px 8px ${DarkMode.controlColor}`
+            : `0 0 8px 8px ${LightMode.controlColor}`
         }
       />
     </SwitchWrapper>

@@ -7,28 +7,41 @@ import HeartIcon from "../../icons/HeartIcon";
 import MoneyIcon from "../../icons/MoneyIcon";
 import ShoppingcartIcon from "../../icons/ShoppingcartIcon";
 import TodoIcon from "../../icons/TodoIcon";
-import { Theme } from "../../redux/theme/types";
 import { LinkButtonsWrapper } from "./styles";
 
 interface HomeProps {
-  theme: Theme;
+  fontColor: string;
+  firstButtonColor: string;
+  secondButtonColor: string;
+  thirdButtonColor: string;
+  fourthButtonColor: string;
+  primaryButtonColor: string;
+  primaryButtonTextColor: string;
 }
 
-const Home: FC<HomeProps> = ({ theme }) => {
+const Home: FC<HomeProps> = ({
+  fontColor,
+  firstButtonColor,
+  secondButtonColor,
+  thirdButtonColor,
+  fourthButtonColor,
+  primaryButtonColor,
+  primaryButtonTextColor,
+}) => {
   return (
     <PageWrapper>
-      <Title color={theme.text} text="Hold deg oppdatert!" />
+      <Title color={fontColor} text="Hold deg oppdatert!" />
       <LinkButtonsWrapper>
         <LinkButton
-          background={theme.color1}
-          textcolor={theme.text}
+          background={firstButtonColor}
+          textcolor={fontColor}
           icon={<TodoIcon />}
           onClick={() => console.log("Pressed todo")}
           label="Todo"
         />
         <LinkButton
-          background={theme.color2}
-          textcolor={theme.text}
+          background={secondButtonColor}
+          textcolor={fontColor}
           icon={<ShoppingcartIcon />}
           onClick={() => console.log("Pressed Handleliste")}
           label="Handleliste"
@@ -36,23 +49,23 @@ const Home: FC<HomeProps> = ({ theme }) => {
       </LinkButtonsWrapper>
       <LinkButtonsWrapper>
         <LinkButton
-          background={theme.color3}
-          textcolor={theme.text}
+          background={thirdButtonColor}
+          textcolor={fontColor}
           icon={<HeartIcon />}
           onClick={() => console.log("Pressed Date nights")}
           label="Date nights"
         />
         <LinkButton
-          background={theme.color4}
-          textcolor={theme.text}
+          background={fourthButtonColor}
+          textcolor={fontColor}
           icon={<MoneyIcon />}
           onClick={() => console.log("Pressed Økonomi")}
           label="Økonomi"
         />
       </LinkButtonsWrapper>
       <PrimaryButton
-        color={theme.controls}
-        textColor={theme.controlText}
+        color={primaryButtonColor}
+        fontColor={primaryButtonTextColor}
         label={"Logg ut"}
         onClick={() => console.log("Logg ut")}
       />

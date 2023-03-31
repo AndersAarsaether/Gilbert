@@ -43,7 +43,7 @@ const Home: FC<HomeProps> = ({
           background={secondButtonColor}
           textcolor={fontColor}
           icon={<ShoppingcartIcon />}
-          to={"/todo"}
+          to={"/groceries"}
           label="Handleliste"
         />
       </LinkButtonsWrapper>
@@ -52,14 +52,14 @@ const Home: FC<HomeProps> = ({
           background={thirdButtonColor}
           textcolor={fontColor}
           icon={<HeartIcon />}
-          to={"/todo"}
+          to={"/dates"}
           label="Date nights"
         />
         <LinkButton
           background={fourthButtonColor}
           textcolor={fontColor}
           icon={<MoneyIcon />}
-          to={"/todo"}
+          to={"/economy"}
           label="Økonomi"
         />
       </LinkButtonsWrapper>

@@ -1,4 +1,5 @@
 import React, { FC, ReactNode } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -8,7 +9,7 @@ const Wrapper = styled.div`
   width: 6rem;
 `;
 
-const Circle = styled.button<{ color: string }>`
+const Circle = styled(Link)<{ color: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +30,7 @@ interface LinkButtonProps {
   label: string;
   textcolor: string;
   icon: ReactNode;
-  onClick: () => void;
+  to: string;
 }
 
 const LinkButton: FC<LinkButtonProps> = ({
@@ -37,11 +38,11 @@ const LinkButton: FC<LinkButtonProps> = ({
   textcolor,
   label,
   icon,
-  onClick,
+  to,
 }) => {
   return (
     <Wrapper>
-      <Circle color={background} onClick={onClick}>
+      <Circle color={background} to={to}>
         {icon}
       </Circle>
       <Label color={textcolor}>{label}</Label>

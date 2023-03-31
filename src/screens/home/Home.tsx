@@ -36,14 +36,14 @@ const Home: FC<HomeProps> = ({
           background={firstButtonColor}
           textcolor={fontColor}
           icon={<TodoIcon />}
-          onClick={() => console.log("Pressed todo")}
+          to={"/todo"}
           label="Todo"
         />
         <LinkButton
           background={secondButtonColor}
           textcolor={fontColor}
           icon={<ShoppingcartIcon />}
-          onClick={() => console.log("Pressed Handleliste")}
+          to={"/todo"}
           label="Handleliste"
         />
       </LinkButtonsWrapper>
@@ -52,14 +52,14 @@ const Home: FC<HomeProps> = ({
           background={thirdButtonColor}
           textcolor={fontColor}
           icon={<HeartIcon />}
-          onClick={() => console.log("Pressed Date nights")}
+          to={"/todo"}
           label="Date nights"
         />
         <LinkButton
           background={fourthButtonColor}
           textcolor={fontColor}
           icon={<MoneyIcon />}
-          onClick={() => console.log("Pressed Økonomi")}
+          to={"/todo"}
           label="Økonomi"
         />
       </LinkButtonsWrapper>

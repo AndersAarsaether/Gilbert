@@ -1,6 +1,7 @@
 export interface Theme {
   background: string;
   text: string;
+  controlText: string;
   controls: string;
   color1: string;
   color2: string;
@@ -11,6 +12,7 @@ export interface Theme {
 export const DarkMode: Theme = {
   background: "#1F1F31",
   text: "#FFFFFF",
+  controlText: "#000000",
   controls: "#F1778B",
   color1: "#F0A967",
   color2: "#FDFF8A",
@@ -21,6 +23,7 @@ export const DarkMode: Theme = {
 export const LightMode: Theme = {
   background: "#F7E7CE",
   text: "#7E6859",
+  controlText: "#FFFFFF",
   controls: "#7E6859",
   color1: "#7E6859",
   color2: "#7E6859",

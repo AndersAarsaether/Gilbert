@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 const Header = styled.h1<{ color: string }>`
   color: ${(props) => props.color};
-  font-family: "Palatino", serif;
+  font-size: 2.3rem;
+  font-weight: 300;
 `;
 
 interface TitleProps {

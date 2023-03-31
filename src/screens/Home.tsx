@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { useSelector } from "react-redux";
 import LinkButton from "../components/LinkButton";
 import PageWrapper from "../components/PageWrapper";
+import PrimaryButton from "../components/PrimaryButton";
 import Title from "../components/Title";
 import HeartIcon from "../icons/HeartIcon";
 import MoneyIcon from "../icons/MoneyIcon";
@@ -15,7 +16,7 @@ const Home: FC = () => {
 
   return (
     <PageWrapper>
-      <Title color={theme.text} text="Meny" />
+      <Title color={theme.text} text="Hold deg oppdatert!" />
       <LinkButtonsWrapper>
         <LinkButton
           background={theme.color1}
@@ -48,6 +49,12 @@ const Home: FC = () => {
           label="Økonomi"
         />
       </LinkButtonsWrapper>
+      <PrimaryButton
+        color={theme.controls}
+        textColor={theme.controlText}
+        label={"Logg ut"}
+        onClick={() => console.log("Logg ut")}
+      />
     </PageWrapper>
   );
 };

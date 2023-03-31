@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
-import Home from "./screens/Home";
 import ThemeSwitch from "./components/ThemeSwitch";
 import { ContentWrapper, GlobalWrapper, Margin } from "./styles";
 import AppState from "./redux/state";
+import HomeContainer from "./screens/home/HomeContainer";
 
 const App: FC = () => {
   const theme = useSelector((state: AppState) => state.theme);
@@ -13,7 +13,7 @@ const App: FC = () => {
       <ThemeSwitch />
       <ContentWrapper>
         <Margin>
-          <Home />
+          <HomeContainer />
         </Margin>
       </ContentWrapper>
     </GlobalWrapper>

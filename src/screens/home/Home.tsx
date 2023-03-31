@@ -1,19 +1,20 @@
 import React, { FC } from "react";
-import { useSelector } from "react-redux";
-import LinkButton from "../components/LinkButton";
-import PageWrapper from "../components/PageWrapper";
-import PrimaryButton from "../components/PrimaryButton";
-import Title from "../components/Title";
-import HeartIcon from "../icons/HeartIcon";
-import MoneyIcon from "../icons/MoneyIcon";
-import ShoppingcartIcon from "../icons/ShoppingcartIcon";
-import TodoIcon from "../icons/TodoIcon";
-import AppState from "../redux/state";
+import LinkButton from "../../components/LinkButton";
+import PageWrapper from "../../components/PageWrapper";
+import PrimaryButton from "../../components/PrimaryButton";
+import Title from "../../components/Title";
+import HeartIcon from "../../icons/HeartIcon";
+import MoneyIcon from "../../icons/MoneyIcon";
+import ShoppingcartIcon from "../../icons/ShoppingcartIcon";
+import TodoIcon from "../../icons/TodoIcon";
+import { Theme } from "../../redux/theme/types";
 import { LinkButtonsWrapper } from "./styles";
 
-const Home: FC = () => {
-  const theme = useSelector((state: AppState) => state.theme);
+interface HomeProps {
+  theme: Theme;
+}
 
+const Home: FC<HomeProps> = ({ theme }) => {
   return (
     <PageWrapper>
       <Title color={theme.text} text="Hold deg oppdatert!" />

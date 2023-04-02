@@ -75,7 +75,7 @@ const Checklist: FC<ChecklistProps> = ({
                 background={checkBoxColors[i % checkBoxColors.length]}
                 onClick={() => updateTask(i)}
               >
-                {task.finished && (
+                {task.finished && ( //Må kjøre en ny metode inne her som fjerner den (animert)
                   <div>
                     <CheckIcon fill={checkColor} />
                   </div>

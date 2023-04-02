@@ -1,6 +1,6 @@
-import AppState from "./state";
-import { UpdateThemeAction } from "./theme/actions";
-import { DarkMode } from "./theme/types";
+import AppState from "redux/state";
+import { UpdateThemeAction } from "redux/theme/actions";
+import { DarkMode } from "redux/theme/types";
 
 const initialState: AppState = {
   theme: DarkMode,

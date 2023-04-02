@@ -1,4 +1,4 @@
-import { Theme } from "./theme/types";
+import { Theme } from "redux/theme/types";
 
 type AppState = {
   theme: Theme;

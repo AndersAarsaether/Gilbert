@@ -1,13 +1,13 @@
 import React, { FC } from "react";
-import LinkButton from "../../components/LinkButton";
-import PageWrapper from "../../components/PageWrapper";
-import PrimaryButton from "../../components/PrimaryButton";
-import Title from "../../components/Title";
-import HeartIcon from "../../icons/HeartIcon";
-import MoneyIcon from "../../icons/MoneyIcon";
-import ShoppingcartIcon from "../../icons/ShoppingcartIcon";
-import TodoIcon from "../../icons/TodoIcon";
-import { LinkButtonsWrapper } from "./styles";
+import LinkButton from "components/LinkButton";
+import PageWrapper from "components/PageWrapper";
+import PrimaryButton from "components/PrimaryButton";
+import Title from "components/Title";
+import HeartIcon from "icons/HeartIcon";
+import MoneyIcon from "icons/MoneyIcon";
+import ShoppingcartIcon from "icons/ShoppingcartIcon";
+import TodoIcon from "icons/TodoIcon";
+import { LinkButtonsWrapper } from "screens/home/styles";
 
 interface HomeProps {
   fontColor: string;

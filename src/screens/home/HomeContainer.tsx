@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
-import AppState from "../../redux/state";
-import Home from "./Home";
+import AppState from "redux/state";
+import Home from "screens/home/Home";
 
 const HomeContainer: FC = () => {
   const {

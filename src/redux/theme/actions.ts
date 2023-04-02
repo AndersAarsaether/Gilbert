@@ -1,4 +1,4 @@
-import { Theme } from "./types";
+import { Theme } from "redux/theme/types";
 
 export interface UpdateThemeAction {
   type: "UPDATE_THEME";

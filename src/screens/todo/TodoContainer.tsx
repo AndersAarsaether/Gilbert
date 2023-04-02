@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import { useSelector } from "react-redux";
 import AppState from "redux/state";
 import Todo from "screens/todo/Todo";
@@ -31,8 +31,3 @@ const TodoContainer: FC = () => {
 };
 
 export default TodoContainer;
-function mapTasksToWeb(
-  mockTodos: { description: string; appointee: string }[]
-) {
-  throw new Error("Function not implemented.");
-}

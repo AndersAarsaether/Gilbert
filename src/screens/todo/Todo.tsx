@@ -1,8 +1,9 @@
-import React, { FC, useState } from "react";
-import { Task } from "redux/todos/types";
+import React, { FC, useEffect, useState } from "react";
 import PageWrapper from "components/PageWrapper";
 import Title from "components/Title";
 import RadioButtons from "components/RadioButtons";
+import Checklist from "components/Checklist";
+import { Task } from "models/task";
 
 interface TodoProps {
   fontColor: string;
@@ -10,6 +11,8 @@ interface TodoProps {
   todos: Task[];
   foregroundColor: string;
   controlColor: string;
+  checkmarkColor: string;
+  checkboxColors: string[];
 }
 
 const Todo: FC<TodoProps> = ({
@@ -18,10 +21,19 @@ const Todo: FC<TodoProps> = ({
   todos,
   foregroundColor,
   controlColor,
+  checkmarkColor,
+  checkboxColors,
 }) => {
   const [user, setUser] = useState<string>("Begge");
+  const [tasks, setTasks] = useState<Task[]>(
+    todos.filter((task) => task.appointee === user)
+  );
 
-  const filteredTodos = todos.filter((task) => task.appointee === user);
+  useEffect(() => {
+    setTasks(todos.filter((task) => task.appointee === user));
+  }, [user]);
+
+  console.log(tasks);
   return (
     <PageWrapper>
       <Title text="To do" color={fontColor} />
@@ -33,6 +45,14 @@ const Todo: FC<TodoProps> = ({
         selectedColor={controlColor}
         fontSelectedColor={fontContrastColor}
         fontUnselectedColor={fontColor}
+      />
+      <Checklist
+        tasks={tasks}
+        setTasks={setTasks}
+        taskBackgroundColor={foregroundColor}
+        fontColor={fontColor}
+        checkColor={checkmarkColor}
+        checkBoxColors={checkboxColors}
       />
     </PageWrapper>
   );

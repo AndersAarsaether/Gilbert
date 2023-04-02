@@ -15,8 +15,17 @@ const TodoContainer: FC = () => {
     { description: "Lage middag", appointee: "Begge" },
   ];
 
-  const { fontColor, foregroundColor, controlColor, fontContrastColor } =
-    useSelector((state: AppState) => state.theme);
+  const {
+    backgroundColor,
+    fontColor,
+    foregroundColor,
+    controlColor,
+    fontContrastColor,
+    extraColor1,
+    extraColor2,
+    extraColor3,
+    extraColor4,
+  } = useSelector((state: AppState) => state.theme);
 
   return (
     <Todo
@@ -25,6 +34,8 @@ const TodoContainer: FC = () => {
       todos={todos}
       foregroundColor={foregroundColor}
       controlColor={controlColor}
+      checkmarkColor={backgroundColor}
+      checkboxColors={[extraColor1, extraColor2, extraColor3, extraColor4]}
     />
   );
 };

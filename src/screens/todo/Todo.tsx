@@ -1,9 +1,9 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useState } from "react";
 import PageWrapper from "components/PageWrapper";
 import Title from "components/Title";
 import RadioButtons from "components/RadioButtons";
 import Checklist from "components/Checklist";
-import { Task } from "models/task";
+import { mapTasksToWeb, Task } from "models/task";
 
 interface TodoProps {
   fontColor: string;
@@ -25,13 +25,6 @@ const Todo: FC<TodoProps> = ({
   checkboxColors,
 }) => {
   const [user, setUser] = useState<string>("Begge");
-  const [tasks, setTasks] = useState<Task[]>(
-    todos.filter((task) => task.appointee === user)
-  );
-
-  useEffect(() => {
-    setTasks(todos.filter((task) => task.appointee === user));
-  }, [user]);
 
   return (
     <PageWrapper>
@@ -46,8 +39,8 @@ const Todo: FC<TodoProps> = ({
         fontUnselectedColor={fontColor}
       />
       <Checklist
-        tasks={tasks}
-        setTasks={setTasks}
+        tasks={mapTasksToWeb(todos)}
+        user={user}
         taskBackgroundColor={foregroundColor}
         fontColor={fontColor}
         checkColor={checkmarkColor}

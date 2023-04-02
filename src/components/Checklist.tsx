@@ -1,6 +1,6 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useState } from "react";
 import styled from "styled-components";
-import { Task } from "models/task";
+import { Task, TaskWeb } from "models/task";
 import CheckIcon from "icons/CheckIcon";
 
 const ListWrapper = styled.div`
@@ -14,18 +14,18 @@ const TaskWrapper = styled.div<{ background: string }>`
   border-radius: 0.5rem;
   margin-bottom: 1rem;
   background-color: ${(props) => props.background};
+  border-width: 0;
 `;
 
 const Checkbox = styled.button<{ background: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 0.5rem;
-  margin-inline: 1rem;
   border-width: 0;
+  margin-inline: 1rem;
   background-color: ${(props) => props.background};
 `;
 
@@ -34,8 +34,8 @@ const Text = styled.span<{ color: string }>`
 `;
 
 interface ChecklistProps {
-  tasks: Task[];
-  setTasks: (tasks: Task[]) => void;
+  tasks: TaskWeb[];
+  user?: string;
   taskBackgroundColor: string;
   fontColor: string;
   checkBoxColors: string[];
@@ -44,26 +44,29 @@ interface ChecklistProps {
 
 const Checklist: FC<ChecklistProps> = ({
   tasks,
-  setTasks,
+  user,
   taskBackgroundColor,
   fontColor,
   checkBoxColors,
   checkColor,
 }) => {
-  const updateTask = (index: number) => {
-    const newState = [...tasks];
-    newState[index] = { ...newState[index], appointee: "Finished" };
-    setTasks(newState);
+  const clickHandler = (task: Task): void => {
+    console.log(task);
   };
 
-  //const filteredTasks = tasks.filter((task) => task.appointee != "Finished");
-  //setTasks(filteredTasks);
+  const [tasklist, setTasklist] = useState<TaskWeb[]>(tasks);
+
+  const updateTask = (index: number) => {
+    const newState = [...tasks];
+    newState[index] = { ...newState[index], finished: true };
+    setTasklist(newState);
+  };
 
   return (
     <ListWrapper>
-      {tasks.map((task, i) => {
-        if (task.appointee != "Finished") {
-          return (
+      {tasklist.map(
+        (task, i) =>
+          task.appointee == user && (
             <TaskWrapper
               background={taskBackgroundColor}
               key={task.description}
@@ -72,7 +75,7 @@ const Checklist: FC<ChecklistProps> = ({
                 background={checkBoxColors[i % checkBoxColors.length]}
                 onClick={() => updateTask(i)}
               >
-                {task.appointee == "Finished" && (
+                {task.finished && (
                   <div>
                     <CheckIcon fill={checkColor} />
                   </div>
@@ -80,9 +83,8 @@ const Checklist: FC<ChecklistProps> = ({
               </Checkbox>
               <Text color={fontColor}>{task.description}</Text>
             </TaskWrapper>
-          );
-        }
-      })}
+          )
+      )}
     </ListWrapper>
   );
 };

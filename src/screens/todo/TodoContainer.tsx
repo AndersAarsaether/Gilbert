@@ -1,20 +1,10 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { useSelector } from "react-redux";
 import AppState from "redux/state";
 import Todo from "screens/todo/Todo";
+import { mockTodos } from "models/task";
 
 const TodoContainer: FC = () => {
-  const todos = [
-    { description: "Støvsuge soverommet", appointee: "Anders" },
-    { description: "Se formel 1", appointee: "Begge" },
-    { description: "Kode", appointee: "Vilde" },
-    { description: "Trene", appointee: "Begge" },
-    { description: "Spille Harry Potter", appointee: "Vilde" },
-    { description: "Vanne planter", appointee: "Anders" },
-    { description: "Gjøre skole", appointee: "Anders" },
-    { description: "Lage middag", appointee: "Begge" },
-  ];
-
   const {
     backgroundColor,
     fontColor,
@@ -31,7 +21,7 @@ const TodoContainer: FC = () => {
     <Todo
       fontColor={fontColor}
       fontContrastColor={fontContrastColor}
-      todos={todos}
+      todos={mockTodos}
       foregroundColor={foregroundColor}
       controlColor={controlColor}
       checkmarkColor={backgroundColor}
@@ -41,3 +31,8 @@ const TodoContainer: FC = () => {
 };
 
 export default TodoContainer;
+function mapTasksToWeb(
+  mockTodos: { description: string; appointee: string }[]
+) {
+  throw new Error("Function not implemented.");
+}

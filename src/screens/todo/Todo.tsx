@@ -33,7 +33,6 @@ const Todo: FC<TodoProps> = ({
     setTasks(todos.filter((task) => task.appointee === user));
   }, [user]);
 
-  console.log(tasks);
   return (
     <PageWrapper>
       <Title text="To do" color={fontColor} />

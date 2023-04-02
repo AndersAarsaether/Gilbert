@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import styled from "styled-components";
 import { Task } from "models/task";
 import CheckIcon from "icons/CheckIcon";
@@ -56,23 +56,33 @@ const Checklist: FC<ChecklistProps> = ({
     setTasks(newState);
   };
 
+  //const filteredTasks = tasks.filter((task) => task.appointee != "Finished");
+  //setTasks(filteredTasks);
+
   return (
     <ListWrapper>
-      {tasks.map((task, i) => (
-        <TaskWrapper background={taskBackgroundColor} key={task.description}>
-          <Checkbox
-            background={checkBoxColors[i % checkBoxColors.length]}
-            onClick={() => updateTask(i)}
-          >
-            {task.appointee == "Finished" && (
-              <div>
-                <CheckIcon fill={checkColor} />
-              </div>
-            )}
-          </Checkbox>
-          <Text color={fontColor}>{task.description}</Text>
-        </TaskWrapper>
-      ))}
+      {tasks.map((task, i) => {
+        if (task.appointee != "Finished") {
+          return (
+            <TaskWrapper
+              background={taskBackgroundColor}
+              key={task.description}
+            >
+              <Checkbox
+                background={checkBoxColors[i % checkBoxColors.length]}
+                onClick={() => updateTask(i)}
+              >
+                {task.appointee == "Finished" && (
+                  <div>
+                    <CheckIcon fill={checkColor} />
+                  </div>
+                )}
+              </Checkbox>
+              <Text color={fontColor}>{task.description}</Text>
+            </TaskWrapper>
+          );
+        }
+      })}
     </ListWrapper>
   );
 };

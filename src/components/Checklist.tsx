@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import styled from "styled-components";
-import { Task, TaskWeb } from "models/task";
+import { Task } from "models/task";
 import CheckIcon from "icons/CheckIcon";
 
 const ListWrapper = styled.div`
@@ -34,8 +34,7 @@ const Text = styled.span<{ color: string }>`
 `;
 
 interface ChecklistProps {
-  tasks: TaskWeb[];
-  user?: string;
+  tasks: Task[];
   taskBackgroundColor: string;
   fontColor: string;
   checkBoxColors: string[];
@@ -44,29 +43,22 @@ interface ChecklistProps {
 
 const Checklist: FC<ChecklistProps> = ({
   tasks,
-  user,
   taskBackgroundColor,
   fontColor,
   checkBoxColors,
   checkColor,
 }) => {
-  const clickHandler = (task: Task): void => {
-    console.log(task);
-  };
-
-  const [tasklist, setTasklist] = useState<TaskWeb[]>(tasks);
-
   const updateTask = (index: number) => {
     const newState = [...tasks];
     newState[index] = { ...newState[index], finished: true };
-    setTasklist(newState);
+    tasks = newState;
   };
 
   return (
     <ListWrapper>
-      {tasklist.map(
+      {tasks.map(
         (task, i) =>
-          task.appointee == user && (
+          !task.finished && (
             <TaskWrapper
               background={taskBackgroundColor}
               key={task.description}

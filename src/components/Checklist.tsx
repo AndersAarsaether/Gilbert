@@ -35,6 +35,7 @@ const Text = styled.span<{ color: string }>`
 
 interface ChecklistProps {
   tasks: Task[];
+  category?: string;
   taskBackgroundColor: string;
   fontColor: string;
   checkBoxColors: string[];
@@ -43,6 +44,7 @@ interface ChecklistProps {
 
 const Checklist: FC<ChecklistProps> = ({
   tasks,
+  category,
   taskBackgroundColor,
   fontColor,
   checkBoxColors,
@@ -53,27 +55,30 @@ const Checklist: FC<ChecklistProps> = ({
     newState[index] = { ...newState[index], finished: true };
     tasks = newState;
   };
+  const includedTodos = category
+    ? tasks.filter((task) => task.category === category)
+    : tasks;
 
   return (
     <ListWrapper>
-      {tasks.map(
-        (task, i) =>
-          !task.finished && (
+      {includedTodos.map(
+        (todo, i) =>
+          !todo.finished && (
             <TaskWrapper
               background={taskBackgroundColor}
-              key={task.description}
+              key={todo.description}
             >
               <Checkbox
                 background={checkBoxColors[i % checkBoxColors.length]}
                 onClick={() => updateTask(i)}
               >
-                {task.finished && ( //Må kjøre en ny metode inne her som fjerner den (animert)
+                {todo.finished && ( //Må kjøre en ny metode inne her som fjerner den (animert)
                   <div>
                     <CheckIcon fill={checkColor} />
                   </div>
                 )}
               </Checkbox>
-              <Text color={fontColor}>{task.description}</Text>
+              <Text color={fontColor}>{todo.description}</Text>
             </TaskWrapper>
           )
       )}

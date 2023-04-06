@@ -20,16 +20,16 @@ const TodoContainer: FC = () => {
   const mockTodos = [
     {
       description: "Støvsuge soverommet",
-      appointee: "Anders",
+      category: "Anders",
       finished: false,
     },
-    { description: "Se formel 1", appointee: "Begge", finished: false },
-    { description: "Kode", appointee: "Vilde", finished: false },
-    { description: "Trene", appointee: "Begge", finished: false },
-    { description: "Spille Harry Potter", appointee: "Vilde", finished: false },
-    { description: "Vanne planter", appointee: "Anders", finished: false },
-    { description: "Gjøre skole", appointee: "Anders", finished: false },
-    { description: "Lage middag", appointee: "Begge", finished: false },
+    { description: "Se formel 1", category: "Begge", finished: false },
+    { description: "Kode", category: "Vilde", finished: false },
+    { description: "Trene", category: "Begge", finished: false },
+    { description: "Spille Harry Potter", category: "Vilde", finished: false },
+    { description: "Vanne planter", category: "Anders", finished: false },
+    { description: "Gjøre skole", category: "Anders", finished: false },
+    { description: "Lage middag", category: "Begge", finished: false },
   ] as Task[];
 
   return (

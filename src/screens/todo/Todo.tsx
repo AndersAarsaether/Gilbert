@@ -25,7 +25,6 @@ const Todo: FC<TodoProps> = ({
   checkboxColors,
 }) => {
   const [user, setUser] = useState<string>("Begge");
-  const filteredTodos = todos.filter((todo) => todo.appointee === user);
 
   return (
     <PageWrapper>
@@ -40,7 +39,8 @@ const Todo: FC<TodoProps> = ({
         fontUnselectedColor={fontColor}
       />
       <Checklist
-        tasks={filteredTodos}
+        tasks={todos}
+        category={user}
         taskBackgroundColor={foregroundColor}
         fontColor={fontColor}
         checkColor={checkmarkColor}

@@ -1,24 +1,10 @@
-import AppState from "redux/state";
-import { UpdateThemeAction } from "redux/theme/actions";
-import { DarkMode } from "models/theme";
+import { combineReducers } from "redux";
+import todoReducer from "redux/todos/reducer";
+import themeReducer from "redux/theme/reducer";
 
-const initialState: AppState = {
-  theme: DarkMode,
-};
+const rootReducer = combineReducers({
+  theme: themeReducer,
+  todos: todoReducer,
+});
 
-const appReducer = (
-  state = initialState,
-  action: UpdateThemeAction
-): AppState => {
-  switch (action.type) {
-    case "UPDATE_THEME":
-      return {
-        ...state,
-        theme: action.payload,
-      };
-    default:
-      return state;
-  }
-};
-
-export default appReducer;
+export default rootReducer;

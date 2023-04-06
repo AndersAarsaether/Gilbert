@@ -1,5 +1,5 @@
 export interface Task {
   description: string;
-  appointee: string;
+  category: string;
   finished: boolean;
 }

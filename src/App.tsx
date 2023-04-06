@@ -12,10 +12,11 @@ import EconomyContainer from "screens/economy/EconomyContainer";
 import NotFoundContainer from "screens/errors/notfound/NotFoundContainer";
 
 const App: FC = () => {
-  const { backgroundColor } = useSelector((state: AppState) => state.theme);
-
+  const theme = useSelector((state: AppState) => state.theme);
+  console.log(theme);
+  console.log(theme.backgroundColor);
   return (
-    <GlobalWrapper background={backgroundColor}>
+    <GlobalWrapper background={theme.backgroundColor}>
       <ThemeSwitch />
       <ContentWrapper>
         <Margin>

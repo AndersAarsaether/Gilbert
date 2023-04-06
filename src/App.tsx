@@ -13,10 +13,10 @@ import NotFoundContainer from "screens/errors/notfound/NotFoundContainer";
 
 const App: FC = () => {
   const theme = useSelector((state: AppState) => state.theme);
-  console.log(theme);
+  console.log(theme.theme);
   console.log(theme.backgroundColor);
   return (
-    <GlobalWrapper background={theme.backgroundColor}>
+    <GlobalWrapper background={theme.theme.backgroundColor}>
       <ThemeSwitch />
       <ContentWrapper>
         <Margin>

@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import styled, { keyframes } from "styled-components";
+import { CSSTransition } from "react-transition-group";
 import { Task } from "models/task";
 import CheckIcon from "icons/CheckIcon";
 
@@ -12,6 +13,15 @@ const fadeIn = keyframes`
   to {
     padding-right: 0;
     opacity: 1;
+  }
+`
+
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 `
 
@@ -28,6 +38,10 @@ const TaskWrapper = styled.div<{ background: string }>`
   margin-bottom: 1rem;
   background-color: ${(props) => props.background};
   border-width: 0;
+  &.fade-exit {
+    animation: ${fadeOut} 1s;
+    animation-delay: 1s;
+  }
 `;
 
 const Checkbox = styled.button<{ background: string }>`
@@ -69,26 +83,37 @@ const Checklist: FC<ChecklistProps> = ({
   checkBoxColors,
   checkColor,
 }) => {
- 
+
   const updateTask = (index: number) => {
     const newState = [...tasks];
     newState[index] = { ...newState[index], finished: true };
     setTasks(newState);
   };
 
-  let colourIndex = 0;
+  const filterTasks = () => {
+    setTasks(tasks.filter(task => !task.finished));
+  }
+
+  let counter = 0;
 
   return (
     <ListWrapper>
       {tasks.map(
-        (task, i) =>
-          (!task.finished  || 1 < 2) && task.category === category && (
+        (task, i) => task.category === category && (
+          <CSSTransition
+            key={counter}
+            in={!task.finished}
+            classNames="fade"
+            timeout={1500}
+            unmountOnExit
+            onExited={() => filterTasks()}
+          >
             <TaskWrapper
               background={taskBackgroundColor}
               key={task.description}
             >
               <Checkbox
-                background={checkBoxColors[colourIndex++ % checkBoxColors.length]}
+                background={checkBoxColors[counter++ % checkBoxColors.length]}
                 onClick={() => updateTask(i)}
               >
                 {task.finished && (
@@ -99,7 +124,8 @@ const Checklist: FC<ChecklistProps> = ({
               </Checkbox>
               <Text color={fontColor}>{task.description}</Text>
             </TaskWrapper>
-          )
+          </CSSTransition>
+      )
       )}
     </ListWrapper>
   );

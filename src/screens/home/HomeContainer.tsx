@@ -17,10 +17,10 @@ const HomeContainer: FC = () => {
   return (
     <Home
       fontColor={fontColor}
-      firstButtonColor={extraColor1}
-      secondButtonColor={extraColor2}
-      thirdButtonColor={extraColor3}
-      fourthButtonColor={extraColor4}
+      firstButtonColor={extraColor4}
+      secondButtonColor={extraColor3}
+      thirdButtonColor={extraColor1}
+      fourthButtonColor={extraColor2}
       primaryButtonColor={controlColor}
       primaryButtonTextColor={fontContrastColor}
     />

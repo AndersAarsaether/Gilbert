@@ -16,10 +16,10 @@ export const DarkMode: Theme = {
   fontColor: "#FFFFFF",
   fontContrastColor: "#000000",
   controlColor: "#F1778B",
-  extraColor1: "#F0A967",
-  extraColor2: "#FDFF8A",
-  extraColor3: "#E287CE",
-  extraColor4: "#44EB9F",
+  extraColor1: "#E287CE",
+  extraColor2: "#44EB9F",
+  extraColor3: "#FDFF8A",
+  extraColor4: "#F0A967",
 };
 
 export const LightMode: Theme = {

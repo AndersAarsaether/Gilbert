@@ -4,6 +4,7 @@ import Title from "components/Title";
 import RadioButtons from "components/RadioButtons";
 import Checklist from "components/Checklist";
 import { Task } from "models/task";
+import InputWithButton from "components/InputWithButton";
 
 interface TodoProps {
   todos: Task[];
@@ -49,6 +50,7 @@ const Todo: FC<TodoProps> = ({
         checkColor={checkmarkColor}
         checkBoxColors={checkboxColors}
       />
+      <InputWithButton />
     </PageWrapper>
   );
 };

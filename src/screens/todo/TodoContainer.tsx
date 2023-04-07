@@ -35,11 +35,11 @@ const TodoContainer: FC = () => {
     { description: "Lage middag", category: "Begge", finished: false },
   ] as Task[];
 
-  const [todos, setTodos] = useState<Task[]>(mockTodos)
+  const [todos, setTodos] = useState<Task[]>(mockTodos);
 
   useEffect(() => {
-    dispatch(updateTasks(todos))
-  }, [todos])
+    dispatch(updateTasks(todos));
+  }, [todos]);
 
   return (
     <Todo

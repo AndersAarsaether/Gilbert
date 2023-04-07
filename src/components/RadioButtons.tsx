@@ -4,9 +4,9 @@ import styled from "styled-components";
 const OptionWrapper = styled.div`
   display: flex;
   justify-content: space-around;
-  height: 1.8rem;
+  height: 2rem;
   width: 100%;
-  margin-block: 2rem;
+  margin-top: 2rem;
 `;
 
 const Option = styled.button<{ backgroundColor: string }>`
@@ -19,7 +19,7 @@ const Option = styled.button<{ backgroundColor: string }>`
 
 const Text = styled.span<{ color: string }>`
   color: ${(props) => props.color};
-  font-size: 15px;
+  font-size: medium;
 `;
 
 interface RadioButtonsProps {

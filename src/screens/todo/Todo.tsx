@@ -29,6 +29,20 @@ const Todo: FC<TodoProps> = ({
 }) => {
   const [user, setUser] = useState<string>("Begge");
 
+  const onAdd = (input: string | undefined) => {
+    if (input == undefined) {
+      return;
+    }
+    const todo = {
+      description: input,
+      category: user,
+      finished: false,
+    } as Task;
+    const todosCopy = [...todos];
+    todosCopy.push(todo);
+    setTodos(todosCopy);
+  };
+
   return (
     <PageWrapper>
       <Title text="To do" color={fontColor} />
@@ -50,7 +64,13 @@ const Todo: FC<TodoProps> = ({
         checkColor={checkmarkColor}
         checkBoxColors={checkboxColors}
       />
-      <InputWithButton />
+      <InputWithButton
+        inputColor={foregroundColor}
+        fontColor={fontColor}
+        buttonColor={controlColor}
+        buttonFontColor={fontContrastColor}
+        onSubmit={onAdd}
+      />
     </PageWrapper>
   );
 };

@@ -1,22 +1,15 @@
 import { Task } from "models/task";
 import { UpdateTasksAction } from "redux/todos/actions";
 
-type TodoState = { todos: Task[] };
-
-const initialState: TodoState = {
-  todos: [],
-};
+const initialState: Task[] = []
 
 const todoReducer = (
   state = initialState,
   action: UpdateTasksAction
-): TodoState => {
+): Task[] => {
   switch (action.type) {
     case "UPDATE_TASKS":
-      return {
-        ...state,
-        todos: action.payload,
-      };
+      return action.payload;
     default:
       return state;
   }

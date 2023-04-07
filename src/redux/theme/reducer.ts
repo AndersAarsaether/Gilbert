@@ -1,22 +1,15 @@
 import { UpdateThemeAction } from "redux/theme/actions";
 import { DarkMode, Theme } from "models/theme";
 
-type ThemeState = { theme: Theme };
-
-const initialState: ThemeState = {
-  theme: DarkMode,
-};
+const initialState: Theme = DarkMode
 
 const themeReducer = (
   state = initialState,
   action: UpdateThemeAction
-): ThemeState => {
+): Theme => {
   switch (action.type) {
     case "UPDATE_THEME":
-      return {
-        ...state,
-        theme: action.payload,
-      };
+      return action.payload;
     default:
       return state;
   }

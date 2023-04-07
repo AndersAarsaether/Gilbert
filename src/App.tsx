@@ -13,7 +13,6 @@ import NotFoundContainer from "screens/errors/notfound/NotFoundContainer";
 
 const App: FC = () => {
   const theme = useSelector((state: AppState) => state.theme);
-  console.log(theme)
   return (
     <GlobalWrapper background={theme.backgroundColor}>
       <ThemeSwitch />

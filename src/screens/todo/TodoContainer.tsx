@@ -1,7 +1,8 @@
 import { Task } from "models/task";
-import React, { FC } from "react";
-import { useSelector } from "react-redux";
+import React, { FC, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import AppState from "redux/state";
+import { updateTasks } from "redux/todos/actions";
 import Todo from "screens/todo/Todo";
 
 const TodoContainer: FC = () => {
@@ -17,6 +18,8 @@ const TodoContainer: FC = () => {
     extraColor4,
   } = useSelector((state: AppState) => state.theme);
 
+  const dispatch = useDispatch();
+
   const mockTodos = [
     {
       description: "Støvsuge soverommet",
@@ -31,6 +34,10 @@ const TodoContainer: FC = () => {
     { description: "Gjøre skole", category: "Anders", finished: false },
     { description: "Lage middag", category: "Begge", finished: false },
   ] as Task[];
+
+  useEffect(() => {
+    dispatch(updateTasks(mockTodos))
+  }, [])
 
   return (
     <Todo

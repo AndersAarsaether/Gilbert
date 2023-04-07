@@ -2,6 +2,8 @@ import React, { FC, useState } from "react";
 import styled from "styled-components";
 import { Task } from "models/task";
 import CheckIcon from "icons/CheckIcon";
+import { useDispatch } from "react-redux";
+import { updateTasks } from "redux/todos/actions";
 
 const ListWrapper = styled.div`
   width: 100%;
@@ -35,7 +37,8 @@ const Text = styled.span<{ color: string }>`
 
 interface ChecklistProps {
   tasks: Task[];
-  category?: string;
+  setTasks: (tasks: Task[]) => void;
+  category: string;
   taskBackgroundColor: string;
   fontColor: string;
   checkBoxColors: string[];
@@ -44,41 +47,42 @@ interface ChecklistProps {
 
 const Checklist: FC<ChecklistProps> = ({
   tasks,
+  setTasks,
   category,
   taskBackgroundColor,
   fontColor,
   checkBoxColors,
   checkColor,
 }) => {
+ 
   const updateTask = (index: number) => {
     const newState = [...tasks];
     newState[index] = { ...newState[index], finished: true };
-    tasks = newState;
+    setTasks(newState);
   };
-  const includedTodos = category
-    ? tasks.filter((task) => task.category === category)
-    : tasks;
+
+  let colourIndex = 0;
 
   return (
     <ListWrapper>
-      {includedTodos.map(
-        (todo, i) =>
-          !todo.finished && (
+      {tasks.map(
+        (task, i) =>
+          !task.finished && task.category === category && (
             <TaskWrapper
               background={taskBackgroundColor}
-              key={todo.description}
+              key={task.description}
             >
               <Checkbox
-                background={checkBoxColors[i % checkBoxColors.length]}
+                background={checkBoxColors[colourIndex++ % checkBoxColors.length]}
                 onClick={() => updateTask(i)}
               >
-                {todo.finished && ( //Må kjøre en ny metode inne her som fjerner den (animert)
+                {task.finished && (
                   <div>
                     <CheckIcon fill={checkColor} />
                   </div>
                 )}
               </Checkbox>
-              <Text color={fontColor}>{todo.description}</Text>
+              <Text color={fontColor}>{task.description}</Text>
             </TaskWrapper>
           )
       )}

@@ -1,5 +1,5 @@
 import { Task } from "models/task";
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import AppState from "redux/state";
 import { updateTasks } from "redux/todos/actions";
@@ -35,15 +35,18 @@ const TodoContainer: FC = () => {
     { description: "Lage middag", category: "Begge", finished: false },
   ] as Task[];
 
+  const [todos, setTodos] = useState<Task[]>(mockTodos)
+
   useEffect(() => {
-    dispatch(updateTasks(mockTodos))
-  }, [])
+    dispatch(updateTasks(todos))
+  }, [todos])
 
   return (
     <Todo
+      todos={todos}
+      setTodos={setTodos}
       fontColor={fontColor}
       fontContrastColor={fontContrastColor}
-      todos={mockTodos}
       foregroundColor={foregroundColor}
       controlColor={controlColor}
       checkmarkColor={backgroundColor}

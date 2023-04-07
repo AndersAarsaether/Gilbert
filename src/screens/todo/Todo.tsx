@@ -6,9 +6,10 @@ import Checklist from "components/Checklist";
 import { Task } from "models/task";
 
 interface TodoProps {
+  todos: Task[];
+  setTodos: (todos: Task[]) => void;
   fontColor: string;
   fontContrastColor: string;
-  todos: Task[];
   foregroundColor: string;
   controlColor: string;
   checkmarkColor: string;
@@ -16,9 +17,10 @@ interface TodoProps {
 }
 
 const Todo: FC<TodoProps> = ({
+  todos,
+  setTodos,
   fontColor,
   fontContrastColor,
-  todos,
   foregroundColor,
   controlColor,
   checkmarkColor,
@@ -40,6 +42,7 @@ const Todo: FC<TodoProps> = ({
       />
       <Checklist
         tasks={todos}
+        setTasks={setTodos}
         category={user}
         taskBackgroundColor={foregroundColor}
         fontColor={fontColor}

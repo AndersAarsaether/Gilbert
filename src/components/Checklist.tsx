@@ -1,10 +1,21 @@
-import React, { FC, useState } from "react";
-import styled from "styled-components";
+import React, { FC } from "react";
+import styled, { keyframes } from "styled-components";
 import { Task } from "models/task";
 import CheckIcon from "icons/CheckIcon";
-import { useDispatch } from "react-redux";
-import { updateTasks } from "redux/todos/actions";
 
+//Animations
+const fadeIn = keyframes`
+  from {
+    padding-right: 3rem;
+    opacity: 0;
+  }
+  to {
+    padding-right: 0;
+    opacity: 1;
+  }
+`
+
+//Styles
 const ListWrapper = styled.div`
   width: 100%;
 `;
@@ -34,6 +45,10 @@ const Checkbox = styled.button<{ background: string }>`
 const Text = styled.span<{ color: string }>`
   color: ${(props) => props.color};
 `;
+
+const CheckIconWrapper = styled.div`
+  animation: ${fadeIn} 0.5s ease forwards;
+`
 
 interface ChecklistProps {
   tasks: Task[];
@@ -67,7 +82,7 @@ const Checklist: FC<ChecklistProps> = ({
     <ListWrapper>
       {tasks.map(
         (task, i) =>
-          !task.finished && task.category === category && (
+          (!task.finished  || 1 < 2) && task.category === category && (
             <TaskWrapper
               background={taskBackgroundColor}
               key={task.description}
@@ -77,9 +92,9 @@ const Checklist: FC<ChecklistProps> = ({
                 onClick={() => updateTask(i)}
               >
                 {task.finished && (
-                  <div>
+                  <CheckIconWrapper>
                     <CheckIcon fill={checkColor} />
-                  </div>
+                  </CheckIconWrapper>
                 )}
               </Checkbox>
               <Text color={fontColor}>{task.description}</Text>

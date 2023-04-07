@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useState } from "react";
 import PageWrapper from "components/PageWrapper";
 import Title from "components/Title";
 import RadioButtons from "components/RadioButtons";

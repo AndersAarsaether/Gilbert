@@ -117,7 +117,6 @@ const Checklist: FC<ChecklistProps> = ({
 
   let counter = 0;
 
-  console.log(tasks);
   return (
     <ListWrapper>
       {tasks.filter((task) => task.category == category).length == 0 && (

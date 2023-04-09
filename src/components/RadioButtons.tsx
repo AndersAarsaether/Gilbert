@@ -45,7 +45,7 @@ const RadioButtons: FC<RadioButtonsProps> = ({
     {options.map((option) => {
       const background = selected === option ? selectedColor : unselectedColor;
       const fontColor =
-        selected == option ? fontSelectedColor : fontUnselectedColor;
+        selected === option ? fontSelectedColor : fontUnselectedColor;
       return (
         <Option
           key={option}

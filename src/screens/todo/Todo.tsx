@@ -30,7 +30,7 @@ const Todo: FC<TodoProps> = ({
   const [user, setUser] = useState<string>("Begge");
 
   const onAdd = (input: string | undefined) => {
-    if (input == undefined) {
+    if (input === undefined) {
       return;
     }
     const todo = {

@@ -119,7 +119,7 @@ const Checklist: FC<ChecklistProps> = ({
 
   return (
     <ListWrapper>
-      {tasks.filter((task) => task.category == category).length == 0 && (
+      {tasks.filter((task) => task.category === category).length === 0 && (
         <FinishedText color={fontColor}> Ingen flere oppgaver </FinishedText>
       )}
       {tasks.map(

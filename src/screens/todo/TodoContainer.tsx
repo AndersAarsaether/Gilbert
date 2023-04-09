@@ -39,7 +39,7 @@ const TodoContainer: FC = () => {
 
   useEffect(() => {
     dispatch(updateTasks(todos));
-  }, [todos]);
+  }, [todos, dispatch]);
 
   return (
     <Todo

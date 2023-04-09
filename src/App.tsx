@@ -10,6 +10,7 @@ import DatesContainer from "screens/dates/DatesContainer";
 import GroceriesContainer from "screens/groceries/GroceriesContainer";
 import EconomyContainer from "screens/economy/EconomyContainer";
 import NotFoundContainer from "screens/errors/notfound/NotFoundContainer";
+import SignInConainer from "screens/sign-in/SignInContainer";
 
 const App: FC = () => {
   const theme = useSelector((state: AppState) => state.theme);
@@ -18,8 +19,9 @@ const App: FC = () => {
       <ThemeSwitch />
       <ContentWrapper>
         <Margin>
-          <Routes>
+          <Routes> 
             <Route path="/" element={<HomeContainer />} />
+            <Route path="/sign-in" element={<SignInConainer />} />
             <Route path="/todo" element={<TodoContainer />} />
             <Route path="/groceries" element={<GroceriesContainer />} />
             <Route path="/dates" element={<DatesContainer />} />

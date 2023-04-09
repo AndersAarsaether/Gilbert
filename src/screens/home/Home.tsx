@@ -7,7 +7,7 @@ import HeartIcon from "icons/HeartIcon";
 import MoneyIcon from "icons/MoneyIcon";
 import ShoppingcartIcon from "icons/ShoppingcartIcon";
 import TodoIcon from "icons/TodoIcon";
-import { LinkButtonsWrapper } from "screens/home/styles";
+import { LinkButtonsWrapper, LinksWrapper } from "screens/home/styles";
 
 interface HomeProps {
   fontColor: string;
@@ -31,6 +31,7 @@ const Home: FC<HomeProps> = ({
   return (
     <PageWrapper>
       <Title color={fontColor} text="Hold deg oppdatert!" />
+      <LinksWrapper>
       <LinkButtonsWrapper>
         <LinkButton
           background={firstButtonColor}
@@ -63,6 +64,7 @@ const Home: FC<HomeProps> = ({
           label="Økonomi"
         />
       </LinkButtonsWrapper>
+      </LinksWrapper>
       <PrimaryButton
         color={primaryButtonColor}
         fontColor={primaryButtonTextColor}

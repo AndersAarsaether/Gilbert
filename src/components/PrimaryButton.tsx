@@ -2,8 +2,8 @@ import React, { FC } from "react";
 import styled from "styled-components";
 
 const ButtonWrapper = styled.div`
-  padding-top: 5rem;
-  width: 60%;
+  padding-top: 2rem;
+  width: 15rem;
 `;
 
 const Button = styled.button<{ color: string; fontColor: string }>`

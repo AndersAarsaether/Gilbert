@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import PageWrapper from "components/page-wrapper";
-import Title from "components/Title";
+import Title from "components/title";
 
 interface NotFoundProps {
   fontColor: string;

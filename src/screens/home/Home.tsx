@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import LinkButton from "components/link-button";
 import PageWrapper from "components/page-wrapper";
 import PrimaryButton from "components/primary-button";
-import Title from "components/Title";
+import Title from "components/title";
 import HeartIcon from "icons/HeartIcon";
 import MoneyIcon from "icons/MoneyIcon";
 import ShoppingcartIcon from "icons/ShoppingcartIcon";

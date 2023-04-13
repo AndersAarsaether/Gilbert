@@ -1,7 +1,7 @@
 import PageWrapper from "components/page-wrapper";
 import React, { FC, useRef } from "react";
-import { Input, InputContainer, Label, Error, SubmitWrapper } from "./styles";
-import Title from "components/Title";
+import { Input, InputContainer, Label, SubmitWrapper } from "./styles";
+import Title from "components/title";
 import PrimaryButton from "components/primary-button";
 
 interface SignInProps {

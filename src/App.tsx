@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
-import ThemeSwitch from "components/ThemeSwitch";
+import ThemeSwitch from "components/theme-switch";
 import { ContentWrapper, GlobalWrapper, Margin } from "styles";
 import AppState from "redux/state";
 import { Routes, Route } from "react-router-dom";

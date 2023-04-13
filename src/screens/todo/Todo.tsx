@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import PageWrapper from "components/page-wrapper";
-import Title from "components/Title";
-import RadioButtons from "components/RadioButtons";
+import Title from "components/title";
+import RadioButtons from "components/radio-buttons/RadioButtons";
 import Checklist from "components/checklist";
 import { Task } from "models/task";
 import InputWithButton from "components/input-with-button";

@@ -1,10 +1,10 @@
 import React, { FC, useState } from "react";
-import PageWrapper from "components/PageWrapper";
+import PageWrapper from "components/page-wrapper";
 import Title from "components/Title";
 import RadioButtons from "components/RadioButtons";
-import Checklist from "components/Checklist";
+import Checklist from "components/checklist";
 import { Task } from "models/task";
-import InputWithButton from "components/InputWithButton";
+import InputWithButton from "components/input-with-button";
 
 interface TodoProps {
   todos: Task[];

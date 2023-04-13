@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import PageWrapper from "components/PageWrapper";
+import PageWrapper from "components/page-wrapper";
 import Title from "components/Title";
 
 interface NotFoundProps {

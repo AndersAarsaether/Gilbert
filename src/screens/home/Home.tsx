@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import LinkButton from "components/LinkButton";
-import PageWrapper from "components/PageWrapper";
-import PrimaryButton from "components/PrimaryButton";
+import LinkButton from "components/link-button";
+import PageWrapper from "components/page-wrapper";
+import PrimaryButton from "components/primary-button";
 import Title from "components/Title";
 import HeartIcon from "icons/HeartIcon";
 import MoneyIcon from "icons/MoneyIcon";

@@ -1,14 +1,5 @@
 import React, { FC, ReactNode } from "react";
-import styled from "styled-components";
-
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  max-width: 30rem;
-  margin-inline: 1rem;
-`;
+import { Container } from "./PageWrapperStyles";
 
 interface PageWrapperProps {
   children: ReactNode;

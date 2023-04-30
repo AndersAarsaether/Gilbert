@@ -1,11 +1,11 @@
-import { Task } from "firebase/models";
+import { TaskWithState } from "models/task";
 
 export interface UpdateTasksAction {
   type: "UPDATE_TASKS";
-  payload: Task[];
+  payload: TaskWithState[];
 }
 
-export const updateTasks = (tasks: Task[]): UpdateTasksAction => {
+export const updateTasks = (tasks: TaskWithState[]): UpdateTasksAction => {
   return {
     type: "UPDATE_TASKS",
     payload: tasks,

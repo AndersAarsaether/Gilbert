@@ -1,9 +1,9 @@
-import { Task } from "firebase/models";
-import { Theme } from "theme/theme";
+import { TaskWithState } from "models/task";
+import { Theme } from "models/theme";
 
 type AppState = {
   theme: Theme;
-  todos: Task[];
+  todos: TaskWithState[];
 };
 
 export default AppState;

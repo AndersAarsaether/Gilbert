@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { CSSTransition } from "react-transition-group";
-import { Task } from "firebase/models";
+import { TaskWithState } from "models/task";
 import CheckIcon from "icons/CheckIcon";
 import {
   CheckIconWrapper,
@@ -12,8 +12,8 @@ import {
 } from "./ChecklistStyles";
 
 interface ChecklistProps {
-  tasks: Task[];
-  setTasks: (tasks: Task[]) => void;
+  tasks: TaskWithState[];
+  setTasks: (tasks: TaskWithState[]) => void;
   category: string;
   taskBackgroundColor: string;
   fontColor: string;

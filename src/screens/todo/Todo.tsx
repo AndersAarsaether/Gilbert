@@ -3,12 +3,12 @@ import PageWrapper from "components/page-wrapper";
 import Title from "components/title";
 import RadioButtons from "components/radio-buttons/RadioButtons";
 import Checklist from "components/checklist";
-import { Task } from "firebase/models";
+import { TaskWithState } from "models/task";
 import InputWithButton from "components/input-with-button";
 
 interface TodoProps {
-  todos: Task[];
-  setTodos: (todos: Task[]) => void;
+  todos: TaskWithState[];
+  setTodos: (todos: TaskWithState[]) => void;
   fontColor: string;
   fontContrastColor: string;
   foregroundColor: string;
@@ -37,7 +37,7 @@ const Todo: FC<TodoProps> = ({
       description: input,
       category: user,
       finished: false,
-    } as Task;
+    } as TaskWithState;
     const todosCopy = [...todos];
     todosCopy.push(todo);
     setTodos(todosCopy);

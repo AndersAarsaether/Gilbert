@@ -1,4 +1,4 @@
-import { Theme } from "theme/theme";
+import { Theme } from "models/theme";
 
 export interface UpdateThemeAction {
   type: "UPDATE_THEME";

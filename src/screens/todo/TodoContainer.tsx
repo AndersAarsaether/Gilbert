@@ -1,4 +1,4 @@
-import { Task } from "firebase/models";
+import { TaskWithState } from "models/task";
 import React, { FC, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import AppState from "redux/state";
@@ -33,9 +33,9 @@ const TodoContainer: FC = () => {
     { description: "Vanne planter", category: "Anders", finished: false },
     { description: "Gjøre skole", category: "Anders", finished: false },
     { description: "Lage middag", category: "Begge", finished: false },
-  ] as Task[];
+  ] as TaskWithState[];
 
-  const [todos, setTodos] = useState<Task[]>(mockTodos);
+  const [todos, setTodos] = useState<TaskWithState[]>(mockTodos);
 
   useEffect(() => {
     dispatch(updateTasks(todos));

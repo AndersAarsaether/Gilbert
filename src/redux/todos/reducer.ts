@@ -1,12 +1,12 @@
-import { Task } from "firebase/models";
+import { TaskWithState } from "models/task";
 import { UpdateTasksAction } from "redux/todos/actions";
 
-const initialState: Task[] = [];
+const initialState: TaskWithState[] = [];
 
 const todoReducer = (
   state = initialState,
   action: UpdateTasksAction
-): Task[] => {
+): TaskWithState[] => {
   switch (action.type) {
     case "UPDATE_TASKS":
       return action.payload;

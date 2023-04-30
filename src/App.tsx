@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
-import ThemeSwitch from "components/theme-switch";
+import ThemeSwitch from "components/ThemeSwitch";
 import { ContentWrapper, GlobalWrapper, Margin } from "styles";
 import AppState from "redux/state";
 import { Routes, Route } from "react-router-dom";
@@ -19,7 +19,7 @@ const App: FC = () => {
       <ThemeSwitch />
       <ContentWrapper>
         <Margin>
-          <Routes> 
+          <Routes>
             <Route path="/" element={<HomeContainer />} />
             <Route path="/sign-in" element={<SignInConainer />} />
             <Route path="/todo" element={<TodoContainer />} />

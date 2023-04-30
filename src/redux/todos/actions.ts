@@ -1,4 +1,4 @@
-import { Task } from "models/task";
+import { Task } from "firebase/models";
 
 export interface UpdateTasksAction {
   type: "UPDATE_TASKS";

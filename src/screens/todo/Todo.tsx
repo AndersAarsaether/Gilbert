@@ -3,7 +3,7 @@ import PageWrapper from "components/page-wrapper";
 import Title from "components/title";
 import RadioButtons from "components/radio-buttons/RadioButtons";
 import Checklist from "components/checklist";
-import { Task } from "models/task";
+import { Task } from "firebase/models";
 import InputWithButton from "components/input-with-button";
 
 interface TodoProps {

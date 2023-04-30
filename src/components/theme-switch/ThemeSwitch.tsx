@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import Switch from "react-switch";
 import { updateTheme } from "redux/theme/actions";
-import { DarkMode, LightMode } from "models/theme";
+import { DarkMode, LightMode } from "theme/theme";
 import { SwitchWrapper } from "./ThemeSwitchStyles";
 
 const ThemeSwitch: FC = () => {

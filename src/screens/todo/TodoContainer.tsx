@@ -1,4 +1,4 @@
-import { Task } from "models/task";
+import { Task } from "firebase/models";
 import React, { FC, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import AppState from "redux/state";

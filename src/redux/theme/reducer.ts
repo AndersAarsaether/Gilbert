@@ -1,7 +1,7 @@
 import { UpdateThemeAction } from "redux/theme/actions";
-import { DarkMode, Theme } from "models/theme";
+import { DarkMode, Theme } from "theme/theme";
 
-const initialState: Theme = DarkMode
+const initialState: Theme = DarkMode;
 
 const themeReducer = (
   state = initialState,

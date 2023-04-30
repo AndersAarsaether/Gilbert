@@ -1,8 +1,15 @@
 import React, { FC } from "react";
 import { CSSTransition } from "react-transition-group";
-import { Task } from "models/task";
+import { Task } from "firebase/models";
 import CheckIcon from "icons/CheckIcon";
-import { CheckIconWrapper, Checkbox, FinishedText, ListWrapper, TaskWrapper, Text } from "./ChecklistStyles";
+import {
+  CheckIconWrapper,
+  Checkbox,
+  FinishedText,
+  ListWrapper,
+  TaskWrapper,
+  Text,
+} from "./ChecklistStyles";
 
 interface ChecklistProps {
   tasks: Task[];

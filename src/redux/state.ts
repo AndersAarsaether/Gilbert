@@ -1,5 +1,5 @@
-import { Task } from "models/task";
-import { Theme } from "models/theme";
+import { Task } from "firebase/models";
+import { Theme } from "theme/theme";
 
 type AppState = {
   theme: Theme;
